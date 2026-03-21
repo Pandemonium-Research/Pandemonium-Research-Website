@@ -16,6 +16,27 @@ export const intersections: Intersection[] = [
     icon: "server",
   },
   {
+    id: "cybersecurity",
+    title: "Cybersecurity",
+    description:
+      "Attacks don't wait. We build the defenses, threat models, and tooling that keep systems — and the people who depend on them — safe.",
+    icon: "shield",
+  },
+  {
+    id: "fintech",
+    title: "Fintech & Financial Systems",
+    description:
+      "Money moves the world. We work on the protocols, risk engines, and infrastructure that make financial systems faster, fairer, and more resilient.",
+    icon: "chart-line",
+  },
+  {
+    id: "devtools",
+    title: "Developer Tools",
+    description:
+      "Great tools make great engineers. We obsess over the editors, CLIs, debuggers, and workflows that let developers think less and build more.",
+    icon: "terminal",
+  },
+  {
     id: "uncategorized",
     title: "The Uncategorized Next",
     description:

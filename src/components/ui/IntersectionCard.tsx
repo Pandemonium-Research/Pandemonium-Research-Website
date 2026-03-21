@@ -3,15 +3,27 @@ import NeuralNetIcon from "@/components/icons/NeuralNetIcon";
 import ServerIcon from "@/components/icons/ServerIcon";
 import QuestionMarkIcon from "@/components/icons/QuestionMarkIcon";
 import { Intersection } from "@/lib/types";
+import DevTerminalIcon from "../icons/DevTerminalIcon";
+import ChartLineIcon from "../icons/ChartLineIcon";
+import ShieldIcon from "../icons/ShieldIcon";
 
-export default function IntersectionCard({ title, description, icon }: Intersection) {
+export default function IntersectionCard({
+  title,
+  description,
+  icon,
+}: Intersection) {
   return (
     <FoldedCard className="p-8 flex flex-col gap-6 h-full">
       {/* Icon */}
       <div className="w-16 h-16 text-[#a0a0a0]">
         {icon === "neural-net" && <NeuralNetIcon className="w-full h-full" />}
         {icon === "server" && <ServerIcon className="w-full h-full" />}
-        {icon === "question-mark" && <QuestionMarkIcon className="w-full h-full" />}
+        {icon === "question-mark" && (
+          <QuestionMarkIcon className="w-full h-full" />
+        )}
+        {icon === "shield" && <ShieldIcon className="w-full h-full" />}
+        {icon === "chart-line" && <ChartLineIcon className="w-full h-full" />}
+        {icon === "terminal" && <DevTerminalIcon className="w-full h-full" />}
       </div>
 
       {/* Title */}

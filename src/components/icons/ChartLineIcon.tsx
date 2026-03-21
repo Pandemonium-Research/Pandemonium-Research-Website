@@ -1,0 +1,161 @@
+interface ChartLineIconProps {
+  className?: string;
+}
+export default function ChartLineIcon({ className = "" }: ChartLineIconProps) {
+  return (
+    <svg
+      viewBox="0 0 80 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Axes */}
+      <line
+        x1="12"
+        y1="10"
+        x2="12"
+        y2="64"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <line
+        x1="12"
+        y1="64"
+        x2="72"
+        y2="64"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      {/* Y-axis ticks */}
+      <line
+        x1="9"
+        y1="20"
+        x2="12"
+        y2="20"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.5"
+      />
+      <line
+        x1="9"
+        y1="35"
+        x2="12"
+        y2="35"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.5"
+      />
+      <line
+        x1="9"
+        y1="50"
+        x2="12"
+        y2="50"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.5"
+      />
+      {/* Grid lines */}
+      <line
+        x1="12"
+        y1="20"
+        x2="70"
+        y2="20"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.15"
+      />
+      <line
+        x1="12"
+        y1="35"
+        x2="70"
+        y2="35"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.15"
+      />
+      <line
+        x1="12"
+        y1="50"
+        x2="70"
+        y2="50"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.15"
+      />
+      {/* Main chart line */}
+      <polyline
+        points="12,55 24,48 34,52 44,28 54,32 64,16 70,18"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        fill="none"
+      />
+      {/* Data point dots */}
+      <circle
+        cx="24"
+        cy="48"
+        r="2"
+        stroke="currentColor"
+        strokeWidth="1"
+        fill="none"
+      />
+      <circle
+        cx="44"
+        cy="28"
+        r="2"
+        stroke="currentColor"
+        strokeWidth="1"
+        fill="none"
+      />
+      <circle
+        cx="64"
+        cy="16"
+        r="2.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        fill="none"
+      />
+      {/* Currency symbol */}
+      <text
+        x="69"
+        y="74"
+        textAnchor="middle"
+        fontSize="10"
+        fontWeight="700"
+        fill="currentColor"
+        fontFamily="monospace"
+        opacity="0.5"
+      >
+        $
+      </text>
+      {/* Trend arrow at peak */}
+      <line
+        x1="64"
+        y1="16"
+        x2="70"
+        y2="10"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.4"
+      />
+      <line
+        x1="70"
+        y1="10"
+        x2="67"
+        y2="10"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.4"
+      />
+      <line
+        x1="70"
+        y1="10"
+        x2="70"
+        y2="13"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.4"
+      />
+    </svg>
+  );
+}
