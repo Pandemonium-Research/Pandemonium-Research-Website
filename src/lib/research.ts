@@ -6,6 +6,10 @@ import type { ResearchPost, ResearchHeading } from "@/lib/types";
 
 const CONTENT_DIR = path.join(process.cwd(), "src", "content", "research");
 
+marked.setOptions({
+  gfm: true,
+});
+
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -52,9 +56,7 @@ function parsePost(filename: string): ResearchPost {
 }
 
 export function getAllPosts(): ResearchPost[] {
-  const files = fs
-    .readdirSync(CONTENT_DIR)
-    .filter((f) => f.endsWith(".md"));
+  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md"));
 
   return files
     .map(parsePost)

@@ -129,3 +129,41 @@ body {
   padding: 0;
   color: #a0a0a0;
 }
+
+.prose-research table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  border: 1px solid #2a2a2a;
+  background-color: #151515;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.prose-research thead {
+  background-color: #1d1d1d;
+}
+
+.prose-research th,
+.prose-research td {
+  border: 1px solid #2a2a2a;
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+  min-width: 9rem;
+}
+
+.prose-research th {
+  color: #f5f5f5;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.prose-research td {
+  color: #c2c2c2;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
