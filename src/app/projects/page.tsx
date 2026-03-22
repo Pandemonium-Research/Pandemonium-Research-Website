@@ -1,3 +1,6 @@
+import RepositoryCard from "@/components/ui/RepositoryCard";
+import { repositories } from "@/data/repositories";
+
 export default function ProjectsPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
@@ -17,6 +20,12 @@ export default function ProjectsPage() {
         Ongoing builds, prototypes, and applied research efforts from
         Pandemonium Research.
       </p>
+
+      <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {repositories.map((repository) => (
+          <RepositoryCard key={repository.id} {...repository} />
+        ))}
+      </div>
     </div>
   );
 }
