@@ -25,6 +25,7 @@ export interface ResearchHeading {
 }
 
 export interface RepositoryProject {
+  id: string;
   name: string;
   description: string;
   repositoryUrl: string;
