@@ -24,6 +24,15 @@ export interface ResearchHeading {
   level: 2 | 3;
 }
 
+export interface RepositoryProject {
+  name: string;
+  description: string;
+  repositoryUrl: string;
+  repositoryFullName: string;
+  liveUrl?: string;
+  thumbnailUrl?: string;
+}
+
 export interface ResearchPost {
   slug: string;
   title: string;
