@@ -1,14 +1,13 @@
 import MoonIcon from "@/components/icons/MoonIcon";
 import TerminalIcon from "@/components/icons/TerminalIcon";
-import TeamIcon from "@/components/icons/TeamIcon";
 
 const iconGrid = [
-  { id: "moon", Icon: MoonIcon },
-  { id: "team-1", Icon: TeamIcon },
-  { id: "team-2", Icon: TeamIcon },
-  { id: "terminal", Icon: TerminalIcon },
-  { id: "team-3", Icon: TeamIcon },
-  { id: "team-4", Icon: TeamIcon },
+  { id: "moon", type: "icon", Icon: MoonIcon },
+  { id: "researcher-1", type: "image", src: "/cat-researcher-1.png", alt: "Researcher" },
+  { id: "researcher-2", type: "image", src: "/cat-researcher-2.png", alt: "Researcher" },
+  { id: "terminal", type: "icon", Icon: TerminalIcon },
+  { id: "researcher-3", type: "image", src: "/cat-researcher-3.png", alt: "Researcher" },
+  { id: "mascot", type: "image", src: "/octopus-mascot.png", alt: "Claude Code mascot" },
 ];
 
 export default function WorkingInTheDark() {
@@ -39,12 +38,20 @@ export default function WorkingInTheDark() {
 
         {/* Right: Icon grid */}
         <div className="grid grid-cols-3 gap-3">
-          {iconGrid.map(({ id, Icon }) => (
+          {iconGrid.map((item) => (
             <div
-              key={id}
-              className="aspect-square border border-[#2a2a2a] bg-[#1a1a1a] flex items-center justify-center"
+              key={item.id}
+              className="aspect-square border border-[#2a2a2a] bg-[#1a1a1a] flex items-center justify-center overflow-hidden"
             >
-              <Icon className="w-10 h-10 text-[#505050]" />
+              {item.type === "icon" && item.Icon ? (
+                <item.Icon className="w-10 h-10 text-[#505050]" />
+              ) : item.type === "image" && item.src ? (
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-15 h-15 object-contain"
+                />
+              ) : null}
             </div>
           ))}
         </div>
