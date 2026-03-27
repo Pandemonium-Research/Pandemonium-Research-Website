@@ -1,7 +1,7 @@
 import HeroSection from "@/components/sections/HeroSection";
 import CoreIntersections from "@/components/sections/CoreIntersections";
 import WorkingInTheDark from "@/components/sections/WorkingInTheDark";
-import ActiveProjects from "@/components/sections/ActiveProjects";
+// import ActiveProjects from "@/components/sections/ActiveProjects";
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
       <HeroSection />
       <CoreIntersections />
       <WorkingInTheDark />
-      <ActiveProjects />
+      {/* <ActiveProjects /> */}
     </>
   );
 }
