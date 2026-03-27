@@ -60,6 +60,7 @@ function parsePost(filename: string): ResearchPost {
     summary: data.summary ?? "",
     content: rendered,
     headings,
+    paperUrl: data.paperUrl,
   };
 }
 

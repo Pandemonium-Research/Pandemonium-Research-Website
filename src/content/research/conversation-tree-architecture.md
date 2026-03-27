@@ -11,6 +11,7 @@ tags:
   - Conversational AI
   - Architecture
 summary: "Current LLM interfaces accumulate all context in a single unbounded window, causing unrelated threads to corrupt each other. We introduce the Conversation Tree Architecture (CTA), a hierarchical framework that organizes conversations as trees of context-isolated nodes with structured mechanisms for selective context flow."
+paperUrl: "https://arxiv.org/abs/2603.21278"
 ---
 
 ## The Problem: Logical Context Poisoning
