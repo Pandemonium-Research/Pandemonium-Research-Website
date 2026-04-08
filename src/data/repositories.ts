@@ -20,6 +20,14 @@ export const repositories: RepositoryProject[] = [
     liveUrl: "https://skilldex-web.vercel.app",
   },
   {
+    id: "craig",
+    name: "CRAiG",
+    description:
+      "An OpenEnv-compliant reinforcement learning environment for evaluating autonomous code refactoring agents. CRAiG enables agents to iteratively apply AST-based transformations on real Python codebases, optimizing code quality metrics like cyclomatic complexity, duplication, coverage, and dead code, while ensuring correctness through continuous test validation with rollback guarantees.",
+    repositoryUrl: "https://github.com/Pandemonium-Research/CRAiG",
+    repositoryFullName: "Pandemonium-Research/CRAiG",
+  },
+  {
     id: "stacked",
     name: "Stacked",
     description:
