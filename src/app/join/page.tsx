@@ -53,10 +53,10 @@ export default function JoinPage() {
         {cohort && (
           <Link
             href="/join/cohort"
-            className="group flex flex-col justify-between bg-[#111111] p-8 hover:bg-[#161616] transition-colors"
+            className="group flex flex-col justify-between bg-[#111111] p-5 sm:p-8 hover:bg-[#161616] transition-colors"
           >
             <div>
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between gap-4 mb-6">
                 <p
                   className="text-xs uppercase tracking-widest text-[#a0a0a0]"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
@@ -92,7 +92,7 @@ export default function JoinPage() {
         {/* General inquiry */}
         <Link
           href="/contact"
-          className="group flex flex-col justify-between bg-[#111111] p-8 hover:bg-[#161616] transition-colors"
+          className="group flex flex-col justify-between bg-[#111111] p-5 sm:p-8 hover:bg-[#161616] transition-colors"
         >
           <div>
             <p

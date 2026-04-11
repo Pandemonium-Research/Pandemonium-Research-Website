@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { getLatestCohort } from "@/data/cohorts";
 import { cohortFormFields } from "@/data/cohort-form";
 import ApplicationForm from "@/components/ui/ApplicationForm";
@@ -37,17 +38,19 @@ export default function CohortPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32">
+      {/* Back link */}
+      <Link
+        href="/join"
+        className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-[#707070] hover:text-[#c0c0c0] transition-colors mb-6"
+        style={{ fontFamily: "var(--font-space-grotesk)" }}
+      >
+        ← Join
+      </Link>
+
       {/* ----------------------------------------------------------------- */}
       {/* Header                                                             */}
       {/* ----------------------------------------------------------------- */}
       <div className="max-w-2xl mb-20">
-        <p
-          className="text-xs uppercase tracking-widest text-[#a0a0a0] mb-6"
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
-        >
-          Join / Cohort
-        </p>
-
         <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mb-6">
           <h1
             className="text-4xl sm:text-5xl font-bold uppercase text-[#f5f5f5] leading-tight"

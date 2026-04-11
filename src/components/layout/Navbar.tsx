@@ -51,7 +51,7 @@ export default function Navbar() {
           >
             <BuildingIcon size={28} className="text-[#f5f5f5]" />
             <span
-              className="text-sm font-bold uppercase tracking-widest"
+              className="text-xs font-bold uppercase tracking-widest"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Pandemonium Research
@@ -107,7 +107,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block py-4 border-b border-[#2a2a2a] text-2xl font-bold uppercase tracking-widest text-[#a0a0a0] hover:text-[#f5f5f5] transition-colors"
+                  className="block py-4 border-b border-[#2a2a2a] text-base font-bold uppercase tracking-widest text-[#a0a0a0] hover:text-[#f5f5f5] transition-colors"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {link.label}
