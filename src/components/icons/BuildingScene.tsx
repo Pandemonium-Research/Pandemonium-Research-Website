@@ -325,7 +325,7 @@ export default function BuildingScene({ className = "" }: { className?: string }
         <directionalLight position={[-5, 8, 4]}  intensity={1.8} color="#ffffff" />
         <directionalLight position={[4, 3, -2]}   intensity={0.5} color="#999999" />
         <pointLight        position={[-3, 6, 3]}  intensity={0.6} color="#bbbbbb" />
-des        <Scene />
+        <Scene />
         <Stars />
       </Canvas>
     </div>
