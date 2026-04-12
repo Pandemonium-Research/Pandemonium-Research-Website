@@ -59,3 +59,39 @@ export interface ResearchPost {
   headings: ResearchHeading[];
   paperUrl?: string;
 }
+
+export type FormFieldType =
+  | "text"
+  | "email"
+  | "url"
+  | "textarea"
+  | "checkbox-group";
+
+export interface FormField {
+  id: string;
+  label: string;
+  type: FormFieldType;
+  placeholder?: string;
+  required?: boolean;
+  helperText?: string;
+  /** Only for checkbox-group */
+  options?: string[];
+}
+
+export type CohortStatus = "open" | "closed" | "coming-soon";
+
+export interface Cohort {
+  id: string;
+  name: string;
+  year: number;
+  status: CohortStatus;
+  tagline: string;
+  description: string[];
+  duration: string;
+  format: string;
+  applicationDeadline?: string;
+  startDate?: string;
+  endDate?: string;
+  lookingFor: string[];
+  timeline: { label: string; date: string }[];
+}

@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import RepositoryCard from "@/components/ui/RepositoryCard";
 import { repositories } from "@/data/repositories";
+
+export const metadata: Metadata = {
+  title: { absolute: "Projects - Pandemonium Research" },
+  description:
+    "Open-source projects built by Pandemonium Research across AI systems, developer tooling, and infrastructure.",
+};
 
 export default function ProjectsPage() {
   return (

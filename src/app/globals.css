@@ -31,6 +31,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (max-width: 767px) {
+  p {
+    text-align: justify;
+  }
+}
+
 /* Folded corner card effect */
 .card-folded {
   position: relative;

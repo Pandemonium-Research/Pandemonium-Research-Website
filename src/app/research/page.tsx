@@ -1,11 +1,18 @@
+import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/research";
 import ResearchCard from "@/components/ui/ResearchCard";
+
+export const metadata: Metadata = {
+  title: { absolute: "Research - Pandemonium Research" },
+  description:
+    "Technical writeups and research from Pandemonium Research on AI systems, distributed computing, cybersecurity, and developer infrastructure.",
+};
 
 export default function ResearchPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
+    <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32">
       {/* Header */}
       <div className="mb-16 max-w-2xl">
         <p
@@ -15,7 +22,7 @@ export default function ResearchPage() {
           Research
         </p>
         <h1
-          className="text-5xl font-bold uppercase text-[#f5f5f5] leading-tight"
+          className="text-4xl sm:text-5xl font-bold uppercase text-[#f5f5f5] leading-tight"
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
           The Work.
