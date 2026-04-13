@@ -7,6 +7,7 @@ export const repositories: RepositoryProject[] = [
     description:
       "A modern tool for managing and visualizing stacked pull requests, making code review workflows faster and clearer.",
     liveUrl: "https://stacked-cm.vercel.app",
+    thumbnailUrl: "/thumbnails/stacked.png",
   },
   {
     id: "skilldex",
