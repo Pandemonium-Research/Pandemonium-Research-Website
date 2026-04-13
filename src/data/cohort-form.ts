@@ -12,6 +12,7 @@ import { FormField } from "@/lib/types";
  *  - "url"            URL input (validated by browser)
  *  - "textarea"       Multi-line text
  *  - "checkbox-group" One or more checkboxes from an `options` array
+ *  - "file"           File upload (PDF, DOC, DOCX)
  */
 export const cohortFormFields: FormField[] = [
   {
@@ -56,6 +57,12 @@ export const cohortFormFields: FormField[] = [
       "Developer Tools",
       "Something else entirely",
     ],
+  },
+  {
+    id: "cv",
+    label: "CV / Resume",
+    type: "file",
+    helperText: "Optional. PDF, DOC, or DOCX. Max 5 MB.",
   },
   {
     id: "links",

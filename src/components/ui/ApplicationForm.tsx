@@ -96,10 +96,31 @@ function CheckboxGroupField({ field }: { field: FormField }) {
   );
 }
 
+function FileField({ field }: { field: FormField }) {
+  return (
+    <div>
+      <label htmlFor={field.id} className={labelClass}>
+        {field.label}
+        {field.required && <span className="text-[#f5f5f5] ml-1">*</span>}
+      </label>
+      <input
+        id={field.id}
+        name={field.id}
+        type="file"
+        accept=".pdf,.doc,.docx"
+        required={field.required}
+        className="w-full text-sm text-[#a0a0a0] file:mr-4 file:py-2 file:px-4 file:border file:border-[#2a2a2a] file:bg-[#111111] file:text-[#a0a0a0] file:text-xs file:uppercase file:tracking-widest file:cursor-pointer hover:file:text-[#f5f5f5] hover:file:border-[#505050] transition-colors cursor-pointer"
+      />
+      {field.helperText && <p className={helperClass}>{field.helperText}</p>}
+    </div>
+  );
+}
+
 function FormFieldRenderer({ field }: { field: FormField }) {
   if (field.type === "textarea") return <TextareaField field={field} />;
   if (field.type === "checkbox-group")
     return <CheckboxGroupField field={field} />;
+  if (field.type === "file") return <FileField field={field} />;
   return <TextField field={field} />;
 }
 
@@ -130,24 +151,14 @@ export default function ApplicationForm({ fields }: ApplicationFormProps) {
     }
 
     const formData = new FormData(e.currentTarget);
-
-    const payload: Record<string, string> = {
-      access_key: accessKey,
-      subject: "New Pandemonium Research Cohort Application",
-    };
-
-    for (const [key, value] of formData.entries()) {
-      payload[key] = String(value);
-    }
+    formData.append("access_key", accessKey);
+    formData.append("subject", "New Pandemonium Research Cohort Application");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(payload),
+        headers: { Accept: "application/json" },
+        body: formData,
       });
 
       const result = await response.json();

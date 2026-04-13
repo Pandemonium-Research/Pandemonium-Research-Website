@@ -65,7 +65,8 @@ export type FormFieldType =
   | "email"
   | "url"
   | "textarea"
-  | "checkbox-group";
+  | "checkbox-group"
+  | "file";
 
 export interface FormField {
   id: string;
