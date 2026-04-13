@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug, getAllSlugs } from "@/lib/research";
@@ -5,6 +6,27 @@ import TableOfContents from "@/components/ui/TableOfContents";
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) return {};
+  return {
+    title: { absolute: `${post.title} - Pandemonium Research` },
+    description: post.summary,
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      type: "article",
+      publishedTime: post.date,
+      tags: post.tags,
+    },
+  };
 }
 
 function formatDate(dateStr: string): string {
@@ -24,8 +46,26 @@ export default async function ResearchPostPage({
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.summary,
+    datePublished: post.date,
+    keywords: post.tags,
+    publisher: {
+      "@type": "Organization",
+      name: "Pandemonium Research",
+      url: "https://pandemonium-research.vercel.app",
+    },
+  };
+
   return (
-    <div className="max-w-6xl mx-auto px-6 md:px-12 py-32">
+    <div className="max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Back link */}
       <Link
         href="/research"

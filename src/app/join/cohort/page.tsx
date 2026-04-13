@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { getLatestCohort } from "@/data/cohorts";
 import { cohortFormFields } from "@/data/cohort-form";
 import ApplicationForm from "@/components/ui/ApplicationForm";
 import { CohortStatus } from "@/lib/types";
+
+export const metadata: Metadata = {
+  title: { absolute: "Cohort Program - Pandemonium Research" },
+  description:
+    "Apply to the Pandemonium Research cohort program for builders working on ambitious technical projects.",
+};
 
 const statusLabel: Record<CohortStatus, string> = {
   open: "Applications Open",
@@ -29,27 +37,29 @@ export default function CohortPage() {
   if (!cohort) notFound();
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
+    <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32">
+      {/* Back link */}
+      <Link
+        href="/join"
+        className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-[#707070] hover:text-[#c0c0c0] transition-colors mb-6"
+        style={{ fontFamily: "var(--font-space-grotesk)" }}
+      >
+        ← Join
+      </Link>
+
       {/* ----------------------------------------------------------------- */}
       {/* Header                                                             */}
       {/* ----------------------------------------------------------------- */}
       <div className="max-w-2xl mb-20">
-        <p
-          className="text-xs uppercase tracking-widest text-[#a0a0a0] mb-6"
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
-        >
-          Join / Cohort
-        </p>
-
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mb-6">
           <h1
-            className="text-5xl font-bold uppercase text-[#f5f5f5] leading-tight"
+            className="text-4xl sm:text-5xl font-bold uppercase text-[#f5f5f5] leading-tight"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             {cohort.name} {cohort.year}
           </h1>
           <span
-            className={`shrink-0 self-start mt-2 text-xs uppercase tracking-widest border px-2.5 py-1 ${statusColor[cohort.status]}`}
+            className={`shrink-0 self-start sm:mt-2 text-xs uppercase tracking-widest border px-2.5 py-1 ${statusColor[cohort.status]}`}
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             {statusLabel[cohort.status]}

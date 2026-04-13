@@ -15,11 +15,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pandemonium-research.vercel.app"),
   title: "Pandemonium Research",
   description:
     "Pandemonium Research exists at the intersection of AI, systems, and whatever comes next. We're engineers, researchers, and occasional troublemakers working on problems that don't have a category yet.",
   icons: {
     icon: "/pandemonium_research_logo.png",
+  },
+  openGraph: {
+    title: "Pandemonium Research",
+    description:
+      "Pandemonium Research is an independent research group building open-source tools and publishing work across AI systems, distributed computing, cybersecurity, and developer infrastructure.",
+    url: "https://pandemonium-research.vercel.app",
+    siteName: "Pandemonium Research",
+    type: "website",
+    images: [
+      {
+        url: "/pandemonium_research_logo.png",
+        alt: "Pandemonium Research logo",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

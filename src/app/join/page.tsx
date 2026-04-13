@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getLatestCohort } from "@/data/cohorts";
 import { CohortStatus } from "@/lib/types";
+
+export const metadata: Metadata = {
+  title: { absolute: "Join - Pandemonium Research" },
+  description:
+    "Find ways to get involved with Pandemonium Research, from cohort programs to open collaboration.",
+};
 
 const statusLabel: Record<CohortStatus, string> = {
   open: "Applications Open",
@@ -18,7 +25,7 @@ export default function JoinPage() {
   const cohort = getLatestCohort();
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
+    <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32">
       {/* Header */}
       <div className="max-w-2xl mb-20">
         <p
@@ -28,7 +35,7 @@ export default function JoinPage() {
           Join Us
         </p>
         <h1
-          className="text-5xl font-bold uppercase text-[#f5f5f5] leading-tight"
+          className="text-4xl sm:text-5xl font-bold uppercase text-[#f5f5f5] leading-tight"
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
           Become a Troublemaker.
@@ -46,10 +53,10 @@ export default function JoinPage() {
         {cohort && (
           <Link
             href="/join/cohort"
-            className="group flex flex-col justify-between bg-[#111111] p-8 hover:bg-[#161616] transition-colors"
+            className="group flex flex-col justify-between bg-[#111111] p-5 sm:p-8 hover:bg-[#161616] transition-colors"
           >
             <div>
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between gap-4 mb-6">
                 <p
                   className="text-xs uppercase tracking-widest text-[#a0a0a0]"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
@@ -85,7 +92,7 @@ export default function JoinPage() {
         {/* General inquiry */}
         <Link
           href="/contact"
-          className="group flex flex-col justify-between bg-[#111111] p-8 hover:bg-[#161616] transition-colors"
+          className="group flex flex-col justify-between bg-[#111111] p-5 sm:p-8 hover:bg-[#161616] transition-colors"
         >
           <div>
             <p
