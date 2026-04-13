@@ -58,6 +58,13 @@ export const cohortFormFields: FormField[] = [
     ],
   },
   {
+    id: "cv",
+    label: "CV / Resume",
+    type: "url",
+    placeholder: "https://drive.google.com/...",
+    helperText: "Optional. Paste a public Google Drive, Dropbox, or similar link.",
+  },
+  {
     id: "links",
     label: "GitHub, Portfolio, or Personal Site",
     type: "url",
