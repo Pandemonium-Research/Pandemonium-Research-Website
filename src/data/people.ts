@@ -51,5 +51,9 @@ export const people: Person[] = [
     imageUrl:
       "https://res.cloudinary.com/dkldnxuae/image/upload/c_limit,f_auto,q_auto,w_400/v1/pandemonium/people/Nikhil_bw?_a=BAMAOGcc0",
     // quote: ""
+    links: {
+      github: "https://github.com/nikhilr612",
+      linkedin: "https://www.linkedin.com/in/nikhil-r-0375732b5/",
+    },
   },
 ];
