@@ -33,7 +33,7 @@ export interface Person {
   imageUrl?: string;
   links?: {
     github?: string;
-    twitter?: string;
+    linkedin?: string;
     website?: string;
   };
 }

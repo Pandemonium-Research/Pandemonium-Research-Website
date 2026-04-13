@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { people } from "@/data/people";
 import { Person } from "@/lib/types";
+import GitHubIcon from "@/components/icons/GitHubIcon";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
+import GlobeIcon from "@/components/icons/GlobeIcon";
 
 export const metadata: Metadata = {
   title: { absolute: "People - Pandemonium Research" },
@@ -49,25 +52,27 @@ function PersonCard({ name, role, bio, imageUrl, links }: Person) {
 
       {/* Links */}
       {links && (
-        <div className="flex items-center gap-3 flex-wrap mt-auto pt-2">
+        <div className="flex items-center gap-4 mt-auto pt-2">
           {links.github && (
             <Link
               href={links.github}
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-text-secondary hover:text-text-primary transition-colors"
+              aria-label="GitHub"
+              className="text-text-secondary hover:text-text-primary transition-colors"
             >
-              GitHub ↗
+              <GitHubIcon className="w-4 h-4" />
             </Link>
           )}
-          {links.twitter && (
+          {links.linkedin && (
             <Link
-              href={links.twitter}
+              href={links.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-text-secondary hover:text-text-primary transition-colors"
+              aria-label="LinkedIn"
+              className="text-text-secondary hover:text-text-primary transition-colors"
             >
-              Twitter ↗
+              <LinkedInIcon className="w-4 h-4" />
             </Link>
           )}
           {links.website && (
@@ -75,9 +80,10 @@ function PersonCard({ name, role, bio, imageUrl, links }: Person) {
               href={links.website}
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-text-secondary hover:text-text-primary transition-colors"
+              aria-label="Website"
+              className="text-text-secondary hover:text-text-primary transition-colors"
             >
-              Website ↗
+              <GlobeIcon className="w-4 h-4" />
             </Link>
           )}
         </div>
