@@ -2,15 +2,53 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
-import markedKatex from "marked-katex-extension";
+import katex from "katex";
 import type { BlogPost, ResearchHeading } from "@/lib/types";
 
 const CONTENT_DIR = path.join(process.cwd(), "src", "content", "blog");
 
-marked.use(markedKatex({ throwOnError: false, output: "html" }));
-marked.setOptions({
-  gfm: true,
-});
+marked.setOptions({ gfm: true });
+
+// ---------------------------------------------------------------------------
+// Math pre-processing
+//
+// marked's GFM italic parser processes underscores before any extension
+// tokenizer runs in marked v17, breaking inline math like $Z_N$.
+// Fix: extract all math regions before marked sees them, render with KaTeX
+// directly, then restore after marked is done.
+// ---------------------------------------------------------------------------
+
+function renderWithMath(markdown: string): string {
+  const store: string[] = [];
+
+  function stash(html: string): string {
+    store.push(html);
+    return `\x02MATH${store.length - 1}\x03`;
+  }
+
+  // Block math $$...$$ — must come before inline to avoid mis-matching
+  let src = markdown.replace(/\$\$([\s\S]*?)\$\$/g, (_, tex) =>
+    stash(katex.renderToString(tex.trim(), { displayMode: true, throwOnError: false, output: "html" }))
+  );
+
+  // Inline math $...$ — don't match $$, don't cross newlines
+  src = src.replace(/(?<!\$)\$(?!\$)((?:[^\n$\\]|\\[\s\S])+?)(?<!\$)\$(?!\$)/g, (_, tex) =>
+    stash(katex.renderToString(tex.trim(), { displayMode: false, throwOnError: false, output: "html" }))
+  );
+
+  // Run marked — math tokens (\x02MATH0\x03) are opaque to GFM
+  let html = marked(src) as string;
+
+  // Restore — block math placeholder may be wrapped in <p> by marked
+  html = html.replace(/<p>\x02MATH(\d+)\x03<\/p>/g, (_, i) =>
+    `<div class="math-display">${store[+i]}</div>`
+  );
+  html = html.replace(/\x02MATH(\d+)\x03/g, (_, i) => store[+i]);
+
+  return html;
+}
+
+// ---------------------------------------------------------------------------
 
 function slugify(text: string): string {
   return text
@@ -50,7 +88,7 @@ function parsePost(filename: string): BlogPost {
   const { data, content } = matter(raw);
   const slug = data.slug ?? filename.replace(/\.md$/, "");
   const headings = extractHeadings(content);
-  const rendered = wrapTables(injectHeadingIds(marked(content) as string));
+  const rendered = wrapTables(injectHeadingIds(renderWithMath(content)));
   return {
     slug,
     title: data.title ?? "",
