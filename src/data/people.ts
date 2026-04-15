@@ -12,6 +12,7 @@ export const people: Person[] = [
     imageUrl:
       "https://res.cloudinary.com/dkldnxuae/image/upload/c_limit,f_auto,q_auto,w_400/v1/pandemonium/people/Sampriti_Saha_bw?_a=BAMAOGcc0",
     // quote: ""
+    // affiliations: { incoming: "IITM", prev: ["IIITH", "IITK"] },
     links: {
       github: "https://github.com/Sampriti2803",
       linkedin: "https://www.linkedin.com/in/sampriti-saha/",
@@ -25,6 +26,7 @@ export const people: Person[] = [
     imageUrl:
       "https://res.cloudinary.com/dkldnxuae/image/upload/c_limit,f_auto,q_auto,w_400/v1/pandemonium/people/Pranav_Hemanth_bw?_a=BAMAOGcc0",
     quote: "Rome wasn't built in a day because they didn't have Claude Code.",
+    // affiliations: { incoming: "IITM", prev: ["IIITH", "IITK"] },
     links: {
       github: "https://github.com/Pranavh-2004",
       linkedin: "https://www.linkedin.com/in/pranav-hemanth/",
@@ -38,6 +40,7 @@ export const people: Person[] = [
     imageUrl:
       "https://res.cloudinary.com/dkldnxuae/image/upload/c_limit,f_auto,q_auto,w_400/v1/pandemonium/people/Roshini_Ramesh_bw?_a=BAMAOGcc0",
     // quote: ""
+    // affiliations: { incoming: "IISc" },
     links: {
       github: "https://github.com/roshr22",
       linkedin: "https://www.linkedin.com/in/roshiniramesh/",
@@ -51,6 +54,7 @@ export const people: Person[] = [
     imageUrl:
       "https://res.cloudinary.com/dkldnxuae/image/upload/c_limit,f_auto,q_auto,w_400/v1/pandemonium/people/Nikhil_bw?_a=BAMAOGcc0",
     // quote: ""
+    // affiliations: { incoming: "Intuit", prev: ["IITB"] },
     links: {
       github: "https://github.com/nikhilr612",
       linkedin: "https://www.linkedin.com/in/nikhil-r-0375732b5/",

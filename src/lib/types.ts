@@ -24,6 +24,10 @@ export interface Person {
   bio?: string;
   quote?: string;
   imageUrl?: string;
+  affiliations?: {
+    incoming?: string;
+    prev?: string[];
+  };
   links?: {
     github?: string;
     linkedin?: string;

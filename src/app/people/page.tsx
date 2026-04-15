@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Meet the researchers, engineers, and builders behind Pandemonium Research.",
 };
 
-function PersonCard({ name, role, bio, imageUrl, links }: Person) {
+function PersonCard({ name, role, bio, imageUrl, affiliations, links }: Person) {
   return (
     <div className="flex flex-col gap-4 border border-border bg-surface-elevated p-6">
       {/* Portrait */}
@@ -44,6 +44,19 @@ function PersonCard({ name, role, bio, imageUrl, links }: Person) {
         <p className="text-xs text-text-secondary tracking-wide uppercase">
           {role}
         </p>
+        {affiliations && (
+          <p className="text-xs text-text-secondary tracking-wide mt-0.5">
+            {affiliations.incoming && (
+              <span className="text-text-primary">→ {affiliations.incoming}</span>
+            )}
+            {affiliations.prev && affiliations.prev.length > 0 && (
+              <span>
+                {affiliations.incoming && " · "}
+                {affiliations.prev.join(" · ")}
+              </span>
+            )}
+          </p>
+        )}
       </div>
 
       {bio && (
