@@ -77,4 +77,17 @@ export const people: Person[] = [
       website: "https://pranavjeet.me",
     },
   },
+  {
+    id: "rahul-jaikrishna",
+    name: "Rahul Jaikrishna",
+    role: "Researcher",
+    imageUrl:
+      "https://res.cloudinary.com/dkldnxuae/image/upload/c_limit,f_auto,q_auto,w_400/v1/pandemonium/people/Rahul_bw?_a=BAMAOGcc0",
+    // quote: ""
+    affiliations: { current: "UC Berkeley" },
+    links: {
+      github: "https://github.com/Tensorflow-Ranger",
+      linkedin: "https://www.linkedin.com/in/rahul-jaikrishna-64971a1a7/",
+    },
+  },
 ];
