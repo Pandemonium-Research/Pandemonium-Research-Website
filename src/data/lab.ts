@@ -19,6 +19,11 @@ export const researchPipeline: ResearchPipelineData = {
       author: "Nikhil R",
       target: "Arxiv",
     },
+    {
+      title: "Advances in Functional Encryption: A Systematic Review",
+      author: "Roshini Ramesh",
+      target: "Arxiv",
+    },
   ],
   submitted: [
     {
