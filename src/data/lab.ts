@@ -15,12 +15,18 @@ export const researchPipeline: ResearchPipelineData = {
   idea: [],
   inProgress: [
     {
+      title: "pReAct",
+      author: "Nikhil R",
+      target: "Arxiv",
+    },
+  ],
+  submitted: [
+    {
       title: "Skilldex",
       author: "Sampriti Saha & Pranav Hemanth",
       target: "Arxiv",
     },
   ],
-  submitted: [],
   published: [
     {
       title: "Conversation Tree Architecture",
