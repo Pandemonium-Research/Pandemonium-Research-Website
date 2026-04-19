@@ -19,6 +19,14 @@ export const repositories: RepositoryProject[] = [
     liveUrl: "https://skilldex-web.vercel.app",
   },
   {
+    id: "opendesign",
+    name: "OpenDesign",
+    description:
+      "An open-source design tool that converts prompts into HTML/CSS/JS prototypes. It extracts design tokens from websites, supports multiple AI providers, and exports to HTML, PDF, and MP4 formats. Self-hostable via Docker Compose.",
+    repositoryUrl: "https://github.com/Pandemonium-Research/OpenDesign",
+    repositoryFullName: "Pandemonium-Research/OpenDesign",
+  },
+  {
     id: "kosmos",
     name: "KosmOS",
     description:
