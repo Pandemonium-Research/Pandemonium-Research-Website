@@ -15,13 +15,19 @@ export const researchPipeline: ResearchPipelineData = {
   idea: [],
   inProgress: [
     {
-      title: "Conversation Tree Architecture",
-      author: "Sampriti Saha",
+      title: "Skilldex",
+      author: "Sampriti Saha & Pranav Hemanth",
       target: "Arxiv",
     },
   ],
   submitted: [],
-  published: [],
+  published: [
+    {
+      title: "Conversation Tree Architecture",
+      author: "Pranav Hemanth & Sampriti Saha",
+      target: "Arxiv",
+    },
+  ],
 };
 
 export interface TeamStatusEntry {
