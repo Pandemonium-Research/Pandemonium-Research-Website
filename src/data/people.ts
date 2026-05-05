@@ -90,4 +90,17 @@ export const people: Person[] = [
       linkedin: "https://www.linkedin.com/in/rahul-jaikrishna-64971a1a7/",
     },
   },
+  {
+    id: "prakhyath-p-nayak",
+    name: "Prakhyath P Nayak",
+    role: "Researcher",
+    imageUrl:
+      "https://res.cloudinary.com/dkldnxuae/image/upload/c_limit,f_auto,q_auto,w_400/v1/pandemonium/people/Prakyath_P_Naiyak_bw?_a=BAMAOGiu0",
+    // quote: ""
+    affiliations: { incoming: "SKaaS", prev: ["CIE"] },
+    links: {
+      github: "https://github.com/PrakyathPNayak",
+      linkedin: "https://www.linkedin.com/in/prakyath-p-nayak/",
+    },
+  },
 ];
