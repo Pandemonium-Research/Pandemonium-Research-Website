@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getLatestCohort } from "@/data/cohorts";
-import { cohortFormFields } from "@/data/cohort-form";
-import ApplicationForm from "@/components/ui/ApplicationForm";
 import { CohortStatus } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -183,23 +181,19 @@ export default function CohortPage() {
             className="text-xs uppercase tracking-widest text-[#a0a0a0] mb-8"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            {cohort.status === "open" ? "Apply" : "Applications are currently closed"}
+            Applications are currently closed
           </h2>
 
-          {cohort.status === "open" ? (
-            <ApplicationForm fields={cohortFormFields} />
-          ) : (
-            <p className="text-sm text-[#505050]">
-              Check back when applications reopen, or reach out at{" "}
-              <a
-                href="mailto:hello@pandemoniumresearch.com"
-                className="text-[#a0a0a0] hover:text-[#f5f5f5] transition-colors underline underline-offset-4"
-              >
-                hello@pandemoniumresearch.com
-              </a>
-              .
-            </p>
-          )}
+          <p className="text-sm text-[#505050]">
+            Check back when applications reopen, or reach out at{" "}
+            <a
+              href="mailto:pandemoniumresearch@gmail.com"
+              className="text-[#a0a0a0] hover:text-[#f5f5f5] transition-colors underline underline-offset-4"
+            >
+              pandemoniumresearch@gmail.com
+            </a>
+            .
+          </p>
         </div>
       </div>
     </div>

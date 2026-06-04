@@ -5,7 +5,7 @@ export const cohorts: Cohort[] = [
     id: "summer-2026",
     name: "Summer Research Cohort",
     year: 2026,
-    status: "open",
+    status: "closed",
     tagline: "Four weeks. Real problems. No handholding.",
     description: [
       "The Pandemonium Summer Cohort is a four-week research and build program for students and early-career engineers who want to work on problems that actually matter.",
