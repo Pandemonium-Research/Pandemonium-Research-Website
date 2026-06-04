@@ -46,21 +46,25 @@ function PersonCard({ name, role, bio, imageUrl, affiliations, links }: Person) 
         </p>
         {affiliations && (
           <p className="text-xs text-text-secondary tracking-wide mt-0.5">
-            {affiliations.current && (
-              <span className="text-text-primary">@ {affiliations.current}</span>
-            )}
+            {affiliations.current?.length ? (
+              <span className="text-text-primary">
+                {affiliations.current.map((a, i) => (
+                  <span key={a}>{i > 0 ? " . @" : "@"}{a}</span>
+                ))}
+              </span>
+            ) : null}
             {affiliations.incoming && (
               <span className="text-text-primary">
-                {affiliations.current && " · "}→ {affiliations.incoming}
+                {affiliations.current?.length ? " · " : ""}→ {affiliations.incoming}
               </span>
             )}
-            {affiliations.prev && affiliations.prev.length > 0 && (
+            {affiliations.prev?.length ? (
               <span>
-                {(affiliations.current || affiliations.incoming) && " · "}
+                {(affiliations.current?.length || affiliations.incoming) && " · "}
                 <span className="text-text-tertiary">prev:</span>{" "}
                 {affiliations.prev.join(" · ")}
               </span>
-            )}
+            ) : null}
           </p>
         )}
       </div>
