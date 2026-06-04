@@ -25,7 +25,7 @@ export interface Person {
   quote?: string;
   imageUrl?: string;
   affiliations?: {
-    current?: string;
+    current?: string[];
     incoming?: string;
     prev?: string[];
   };
