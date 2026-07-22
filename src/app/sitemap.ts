@@ -11,7 +11,6 @@ const staticRoutes = [
   { url: "/people", priority: 0.8 },
   { url: "/projects", priority: 0.8 },
   { url: "/join", priority: 0.8 },
-  { url: "/join/cohort", priority: 0.8 },
   { url: "/contact", priority: 0.5 },
   { url: "/lab", priority: 0.5 },
   { url: "/press", priority: 0.5 },
