@@ -20,6 +20,14 @@ export const repositories: RepositoryProject[] = [
     npmPackage: "skilldex-cli",
   },
   {
+    id: "researchos",
+    name: "ResearchOS",
+    description:
+      "A Python framework that boosts LLM performance on complex CS research tasks by supplying structured, reusable cognitive skills instead of relying on model reasoning alone.",
+    repositoryUrl: "https://github.com/Pandemonium-Research/ResearchOS",
+    repositoryFullName: "Pandemonium-Research/ResearchOS",
+  },
+  {
     id: "opendesign",
     name: "OpenDesign",
     description:
