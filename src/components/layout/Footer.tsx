@@ -49,7 +49,6 @@ export default function Footer() {
         <nav className="flex items-center gap-6">
           {[
             { label: "Contact", href: "/contact" },
-            { label: "Press", href: "/press" },
             { label: "Join Us", href: "/join" },
           ].map((link) => (
             <Link
