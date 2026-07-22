@@ -19,13 +19,13 @@ export const researchPipeline: ResearchPipelineData = {
       author: "Nikhil R",
       target: "Arxiv",
     },
-    {
-      title: "Advances in Functional Encryption: A Systematic Review",
-      author: "Roshini Ramesh",
-      target: "Arxiv",
-    },
   ],
   submitted: [
+    {
+      title: "Skilldex",
+      author: "Sampriti Saha & Pranav Hemanth",
+      target: "EMNLP System Demonstrations",
+    },
     {
       title: "The 45-Hour Prompt",
       author: "Prakyath P Nayak",
