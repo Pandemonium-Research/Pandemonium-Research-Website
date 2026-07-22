@@ -15,7 +15,15 @@ export default function ContactPage() {
         Get In Touch.
       </h1>
       <p className="mt-8 text-[#a0a0a0] max-w-lg leading-relaxed">
-        For press, partnerships, and general inquiries. Coming soon.
+        For partnerships, research collaborations, and general inquiries, reach
+        us at{" "}
+        <a
+          href="mailto:pandemoniumresearch@gmail.com"
+          className="text-[#f5f5f5] hover:text-[#a0a0a0] transition-colors underline underline-offset-4"
+        >
+          pandemoniumresearch@gmail.com
+        </a>
+        .
       </p>
     </div>
   );
